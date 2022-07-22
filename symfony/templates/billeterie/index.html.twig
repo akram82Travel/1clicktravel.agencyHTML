@@ -1,0 +1,644 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BilleterieController!{% endblock %}
+
+{% block body %}
+
+
+
+<div class="container" id="zone-simple">
+          <div class="row" style="visibility: hidden">
+                  <select name="type_vol" id="type_vol" class="form-control borderright valuestyle"><option value="0">Aller simple</option>
+          <option value="1">Aller / Retour</option>
+          <option value="2">Multidestination</option></select>        </div>
+
+
+{{ form_start(form1) }}
+{{ form_start(form2) }}
+
+
+                <div class="cform" role="form">
+                 <div class="container" id="zone-simple">
+
+<div class="container" id="zone-simple">
+
+        <form action="/demandes/addAjax" method="POST" name="clients" enctype="multipart/form-data" id="FormVol" class="cform" role="form">        <input type="hidden" name="id_type_demandes" id="id_type_demandes" value="1">
+        <div class="row" style="visibility: hidden">
+        <select name="type_vol" id="type_vol" class="form-control borderright valuestyle"><option value="0">Aller simple</option>
+<option value="1">Aller / Retour</option>
+<option value="2">Multidestination</option></select>        </div>
+
+
+        <div class="row ">
+            <div class="col-md-12" id="destination">
+<div>
+    <input type="hidden" id="index" name="index" value="1">
+    <div class="row">
+           <div class="col-md-12 ">
+                <h5>
+                    <span class="line"></span>
+                    <span class="text"><strong>Détails Vol </strong></span>
+                </h5>
+            </div>
+      
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="de">Départ</label>
+                <input type="text" id="ville_depart1" name="ville_depart1" class="form-control" required="required" pattern="[A-Za-z0-9]{1,20}">
+                <span class="help-block"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="a">Retour</label>
+                <input type="text" id="ville_arrivee1" name="ville_arrivee1" class="form-control" required="required" pattern="[A-Za-z0-9]{1,20}">
+                <span class="help-block " style="margin-top: 5px;"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="classe">Classe</label>
+                                <select id="classe1" name="classe1" class="form-control" required="">
+                                            <option value="Business">Business</option>   
+                                    </select>
+                <span class="help-block " style="margin-top: 5px;"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="compagnie">Compagnie</label>
+                <select id="compagnie1" name="compagnie1" class="form-control" required="">
+                                            <option value="Air Frances">Air Frances</option>   
+                                            <option value="Turkish air line">Turkish air line</option>   
+                                    </select>
+                <span class="help-block " style="margin-top: 5px;"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="date_depart">Date de départ</label>
+                <div class="input-group date" id="datetimepickerdatedepart1">
+                    <input type="text" id="date_depart1" name="date_depart1" class="form-control" required="required" value="19/07/2022" max="19/07/2022">
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+                <span class="help-block " style="margin-top: 5px;"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="col-md-3" id="date_retour_container" style="display: none;">
+        <div class="form-group">
+            <label class="control-label" for="date_retour">Date Retour </label>
+            <div class="input-group date" id="datetimepickerdateretour1">
+                 <input type="text" id="date_retour1" name="date_retour1" class="form-control" required="required" value="19/07/2022" max="19/07/2022">
+                <span class="input-group-addon">
+                    <i class="fa fa-calendar fa-grean"></i>
+                </span>
+                <span class="help-block " style="margin-top: 5px;"></span>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    
+    <script>
+           $(document).ready(function () {
+            var type_billet = $("#type_vol").val();
+            if (type_billet == 0) {
+               $("#zone-simple #date_retour_container").fadeOut();
+                $("#zone-simple #FormVol  #ajout_vol").fadeOut();
+            }
+            if (type_billet == 1) {
+                $("#zone-simple #date_retour_container").fadeIn();
+                $("#zone-simple #FormVol  #ajout_vol").fadeOut();
+            }
+        });
+       $(function () {
+            $('#datetimepickerdatedepart1').datetimepicker(
+                    {
+                        format: 'DD/MM/YYYY',
+                        locale: 'FR',
+                    });
+            $('#datetimepickerdatedepart1').data("DateTimePicker").minDate("19/07/2022");
+            $('#datetimepickerdateretour1').datetimepicker(
+                    {
+                        format: 'DD/MM/YYYY',
+                        locale: 'FR',
+                    });
+            $('#datetimepickerdateretour1').data("DateTimePicker").minDate("02/01/1970");
+
+            $("#datetimepickerdatedepart1").on("dp.change", function (e) {
+                if (e.date.isAfter($('#datetimepickerdateretour1').data("DateTimePicker").date()) || e.date.isSame($('#datetimepickerdateretour1').data("DateTimePicker").date())) {
+                    $('#datetimepickerdateretour1').data("DateTimePicker").date(e.date.add(1, "day"));
+                }
+
+            });
+            $("#datetimepickerdateretour1").on("dp.change", function (e) {
+                if (e.date.isBefore($('#datetimepickerdatedepart1').data("DateTimePicker").date()) || e.date.isSame($('#datetimepickerdatedepart1').data("DateTimePicker").date())) {
+                    $('#datetimepickerdatedepart1').data("DateTimePicker").date(e.date.subtract(1, "day"));
+                }
+            });
+
+        });
+
+
+    </script>
+</div>
+</div>
+            <div class="col-md-12" id="ajout_vol" style="display: none; text-align: center;">
+                <a href="javascript:void(0);" class="lien_ajout btn " id="addVol">
+                    <span class="rose">+</span>Ajouter un vol</a>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12 ">
+                <h5>
+                    <span class="line"></span>
+                    <span class="text"><strong>Voyageur(s)</strong></span>
+                </h5>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label">Nombre Adulte(s) 
+                        <small style="font-size: smaller !important;"></small> 
+                    </label> 
+                    <select name="nbAdulte" class="form-control" id="nbAdulte"><option value="1">1 ADULTE</option>
+<option value="2">2 ADULTES</option>
+<option value="3">3 ADULTES</option>
+<option value="4">4 ADULTES</option>
+<option value="5">5 ADULTES</option>
+<option value="6">6 ADULTES</option>
+<option value="7">7 ADULTES</option>
+<option value="8">8 ADULTES</option>
+<option value="9">9 ADULTES</option>
+<option value="10">10 ADULTES</option></select>                    <span class="help-block"></span>
+                    <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="nbEnfant">Nombre Enfant(s) </label>
+                    <select name="nbEnfant" class="form-control" id="nbEnfant"><option value="0">0 ENFANT</option>
+<option value="1">1 ENFANT</option>
+<option value="2">2 ENFANTS</option>
+<option value="3">3 ENFANTS</option>
+<option value="4">4 ENFANTS</option>
+<option value="5">5 ENFANTS</option></select>                    <span class="help-block"></span>
+                    <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="nbBebe">Nombre Bébé(s) </label>
+                    <select name="nbBebe" class="form-control" id="nbBebe"><option value="0">0 BEBE</option>
+<option value="1">1 BEBE</option>
+<option value="2">2 BEBE</option>
+<option value="3">3 BEBE</option>
+<option value="4">4 BEBE</option>
+<option value="5">5 BEBE</option></select>
+
+                    <span class="help-block"></span>
+                          <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-md-12" id="demande_benif_adl"><div class="card">
+    <div class="card-body">
+          <div class="row">
+         <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label" for="nom">Nom Adulte Adulte </label>
+                        <input type="text" id="nom-Adulte-1" name="nom-Adulte-1" class="form-control" required="required" pattern="[A-Za-z0-9]{1,20}">
+
+            <span class="help-block " style="margin-top: 5px;"></span>
+            <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+        </div>
+    </div> 
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label" for="prenom">Prénom Adulte Adulte </label>
+            
+            <input type="text" id="prenom-Adulte-1" name="prenom-Adulte-1" class="form-control" required="required">
+
+            <span class="help-block " style="margin-top: 5px;"></span>
+            <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+        </div>
+    </div> 
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label" for="date_nais">Date de naissance Adulte  </label>
+            <div class="input-group date" id="datetimepickernais-Adulte-1">
+                
+                <input type="text" id="date_nais-Adulte-1" name="date_nais-Adulte-1" class="form-control" required="required">
+                <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </span>
+            </div>
+            <span class="help-block " style="margin-top: 5px;"></span>
+            <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label" for="passport">Passeport N° Adulte </label>
+            
+            <input type="text" id="passport-Adulte-1" name="passport-Adulte-1" class="form-control" required="required" pattern="[a-zA-Z0-9]{7}">
+            <span class="help-block " style="margin-top: 5px;"></span>
+            <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+        </div>
+    </div> 
+    </div>
+    </div>
+ 
+       <script>
+
+        $('#datetimepickernais-Adulte-1').datetimepicker(
+                {
+                    format: 'DD/MM/YYYY',
+                    locale: 'FR',
+                });
+   
+       
+    </script>
+
+
+    
+  
+</div>
+<div style="margin-bottom: 10px;"></div>
+</div>
+            <div class="col-md-12" id="demande_benif_enf"></div>
+            <div class="col-md-12" id="demande_benif_bb"></div>
+
+        </div>
+        <div class="row ">
+            <div class="col-md-12 ">
+                <h5>
+                    <span class="line"></span>
+                    <span class="text"><strong>Coordonnées</strong></span>
+                </h5>
+            </div>
+
+
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label class="control-label" for="civilite">
+                        Civilité                        </label>
+                    <select name="civilite" class="form-control borderright valuestyle" id="civilite" required="required"><option value="0">Mr</option>
+<option value="2">Mlle</option>
+<option value="1">Mme</option></select>                    <span class="help-block"></span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="prenom_client">Prénom </label>
+                    <input type="text" name="prenom_client" id="prenom_client" class="form-control borderright valuestyle " value="">                    <span class="help-block "></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="nom_client">Nom </label>
+                    <input type="text" name="nom_client" id="nom_client" class="form-control borderright valuestyle" value="">                    <span class="help-block "></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="email">E-mail </label>
+                    <input type="text" name="email" id="email" class="form-control borderright valuestyle " value="">                    <span class="help-block "></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="control-label" for="telephone">Téléphone </label>
+                    <input type="text" name="telephone" id="telephone" class="form-control borderright valuestyle " value="00216">                    <span class="help-block "></span>
+                </div>
+            </div>
+            <div class="col-md-12 ">
+                <h5>
+                    <span class="line"></span>
+                    <span class="text"><strong>Observation(s)</strong></span>
+                </h5>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea name="remarque" id="remarque" class="form-control borderright valuestyle"></textarea>                    <span class="help-block "></span>
+                </div>
+            </div>   
+
+
+            <div class="col-md-12">
+                 Champ obligatoire            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="clearfix" style="float:right !important;">
+                <button class="btn submit-button btn-save" type="submit">Enregistrer</button>
+                <div class="margin_bottom5"></div>
+            </div>
+        </div>
+        </form>
+
+    </div>
+
+    </div>
+
+
+</br>
+
+</br>
+
+
+
+
+
+
+
+
+                    <div class="control-label">
+                   {{ form_label(form1.ville_depart, 'Départ') }}
+                   </div>
+                   <div class="form-control" required="required">
+                    
+                    </div>
+                 
+
+                
+                     {{ form_label(form1.ville_arrivee, 'Retour') }}
+                    {{form_widget(form1.ville_arrivee)}}
+                    
+                      {{ form_label(form1.classe, 'Classe') }}
+                    {{form_widget(form1.classe)}}
+                   
+
+                     {{ form_label(form1.compagnie, 'compagnie') }}
+                    {{form_widget(form1.compagnie)}}
+                    <br/>
+                    
+
+                {{ form_label(form1.date_depart, 'Date de départ') }}
+                    {{form_widget(form1.date_depart)}}
+                    <br/>
+                    <div class="">Voyageur(s)</div>
+                    
+                     <select class="form-control">
+                     {{ form_label(form1.nbAdulte, 'Nombre Adulte(s)') }}
+                   
+                    <option value="form1.nbAdulte">1 ADULTE</option>
+                    <option value="form1.nbAdulte">2 ADULTE</option>
+                    <option value="form1.nbAdulte">3 ADULTE</option>
+                     <option value="form1.nbAdulte">4 ADULTE</option>
+                     <option value="form1.nbAdulte">5 ADULTE</option>
+                     <option value="form1.nbAdulte">6 ADULTE</option>
+                     <option value="form1.nbAdulte">7 ADULTE</option>
+                    <option value="form1.nbAdulte">8 ADULTE</option>    
+                    <option value="form1.nbAdulte">9 ADULTE</option>   
+                    
+
+                     </select>
+
+                     
+                     <select class="form-control">
+                      {{ form_label(form1.nbEnfant, 'Nombre Enfant(s)') }}
+                   
+                    <option value="form1.nbEnfant">1 ADULTE</option>
+                    <option value="form1.nbEnfant">2 ADULTE</option>
+                    <option value="form1.nbEnfant">3 ADULTE</option>
+                     <option value="form1.nbEnfant">4 ADULTE</option>
+                     <option value="form1.nbEnfant">5 ADULTE</option>
+                    
+                     </select>
+                     
+                     <select class="form-control">
+                     {{ form_label(form1.nbBebe, 'Nombre Bébé(s)') }}
+                   
+                    <option value="form1.nbBebe">1 ADULTE</option>
+                    <option value="form1.nbBebe">2 ADULTE</option>
+                    <option value="form1.nbBebe">3 ADULTE</option>
+                     <option value="form1.nbBebe">4 ADULTE</option>
+                     <option value="form1.nbBebe">5 ADULTE</option>
+                     </select>
+                    <br>
+                     
+
+<div>Voyageur(s)</div>
+
+                     {{ form_label(form2.type_voyageur, 'Départ') }}
+                     {{form_widget(form2.type_voyageur)}}
+
+                     {{ form_label(form2.nom, 'Retour') }}
+                     {{form_widget(form2.nom)}}
+
+
+                     {{ form_label(form2.pernom, 'Classe') }}
+                     {{form_widget(form2.pernom)}}
+
+                     {{ form_label(form2.date_de_naissance, 'Compagine') }}
+                     {{form_widget(form2.date_de_naissance)}}
+
+                     {{form_label(form2.nPassport, 'Date de depart') }}
+                     {{form_widget(form2.nPassport)}}
+                     <br>
+
+<div>Coordonnées</div>
+
+
+                     <select class="form-control">
+                     {{ form_label(form1.civilite, 'Civilité') }}
+                    <option value="form1.civilite">Mr</option>
+                    <option value="form1.civilite">Mlle</option>
+                    <option value="form1.civilite">Mme</option>
+                    </select>
+
+                     {{ form_label(form1.prenom_client, 'Prénom') }}
+                    {{form_widget(form1.prenom_client)}}
+                 
+                  {{ form_label(form1.nom_client, 'Nom') }}
+                    {{form_widget(form1.nom_client)}}
+                 
+                  {{ form_label(form1.email, 'E-mail') }}
+                    {{form_widget(form1.email)}}
+
+                     {{ form_label(form1.telephone, 'Téléphone') }}
+                    {{form_widget(form1.telephone)}}
+
+
+                     {{ form_label(form1.remarque, 'Observation(s)') }}
+                    {{form_widget(form1.remarque)}}
+                    </br>
+   
+                     <input type="submit">       
+                     </br> 
+
+{{ form_end(form1) }}
+{{ form_end(form2) }}
+
+
+
+</div>
+</div>
+
+ <style>
+        input[type=date]{
+            line-height: 1.42857143;
+            border: solid 1px #aaaaaa;
+        }
+
+        .input-group-addon{
+            position: absolute;
+    right: 10px;
+    top: 3px;
+    font-size: 22px;
+        }
+       .spa {
+           color:red;
+         margin-left:-20px
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            $("#nb_destination").val(1);
+            //    var type = $(this).attr('data-type-choix');
+            $.ajax({
+                url: '/billeterie/demandebenif',
+                type: "POST",
+                data: "nbadulte=1&type=Adulte&index=1",
+                dataType: "json",
+                success: function (data) {
+                    $("#demande_benif_adl").html(data.html);
+                }
+            });
+
+            $.ajax({
+                url: '/billeterie/getdestination',
+                type: "POST",
+                dataType: "json",
+                data: "index=0", // + "Enf" + "Bb",
+                success: function (data) {
+                    $("#destination").html(data.html);
+                }
+            });
+
+
+        });
+        $('#nbAdulte').change(function () {
+
+            var adulte = parseInt($('#nbAdulte').val());
+            $("#demande_benif_adl").html("");
+            $.ajax({
+                url: '/billeterie/demandebenif',
+                type: "POST",
+                data: "nbadulte=" + adulte + '&type=' + "Adulte" + '&index=' + adulte,
+                dataType: "json",
+                success: function (data) {
+                    $("#demande_benif_adl").append(data.html);
+                }
+            });
+        });
+        $('#nbEnfant').change(function () {
+
+            var enfant = parseInt($('#nbEnfant').val());
+
+            $("#demande_benif_enf").html("");
+            $.ajax({
+                url: '/billeterie/demandebenif',
+                type: "POST",
+                data: "nbenfant=" + enfant + '&type=' + "Enfant" + '&index=' + enfant,
+                dataType: "json",
+                success: function (data) {
+                    $("#demande_benif_enf").append(data.html);
+                }
+            });
+        });
+        $('#nbBebe').change(function () {
+
+            var bebe = parseInt($('#nbBebe').val());
+            $("#demande_benif_bb").html("");
+            $.ajax({
+                url: '/billeterie/demandebenif',
+                type: "POST",
+                data: "nbenfant=" + bebe + '&type=' + "Bébé" + '&index=' + bebe,
+                dataType: "json",
+                success: function (data) {
+                    $("#demande_benif_bb").append(data.html);
+                }
+            });
+        });
+        $(document).on("change", "#type_vol", function () {
+            $("#nb_destination").val(1);
+            var type_billet = $(this).val();
+            if (type_billet == 2) {
+                $("#zone-simple #date_retour_container").fadeOut();
+                $("#zone-simple #FormVol  #ajout_vol").fadeIn();
+
+            } else {
+
+                var nb_vol = 0;
+                $.ajax({
+                    url: '/billeterie/getdestination',
+                    data: "index=" + nb_vol,
+                    type: "POST",
+                    dataType: "json",
+                    success: function (data) {
+                        $("#destination").html(data.html);
+
+                    }
+                });
+                $("#destination > div:last-child").detach();
+            }
+
+        });
+
+    </script>
+
+    <script>
+        $("#addVol").on("click", function () {
+            var nb_vol = $("#destination > div").length;
+            if (nb_vol < 3) {
+                $.ajax({
+                    url: '/billeterie/getdestination',
+                    data: "index=" + nb_vol,
+                    type: "POST",
+                    dataType: "json",
+                    beforeSend: function () {
+                        $("#addVol").show().css("display", "none");
+
+                    },
+                    success: function (data) {
+                        $("#destination").append(data.html);
+                        $("#nb_destination").val(parseInt((nb_vol + 1)));
+                    },
+                    complete: function (xhr, status) {
+                        $("#addVol").show().css("display", "block");
+                    }
+                });
+                if (nb_vol === 2) {
+                    $("#ajout_vol").fadeOut();
+                }
+            }
+        });
+    </script>
+    <script>
+
+        $("#FormVol").validation({inputs: ['type_vol', 'date_depart1', 'date_retour1', 'nom_client', 'prenom_client', 'telephone', 'email', 'nbAdulte']});
+    </script>
+
+
+
+{% endblock %}

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="FR-fr"class="no-js" >
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="1clicktravel travel agencies, hotels et voyages.">
+        <meta name="author" content="Ansonika">
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}1clicktravel | travel agencies, hotels et voyages.!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+
+
+
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    
+    
+
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+
+    <!-- BASE CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/vendors.css" rel="stylesheet">
+    <link href="css/icofont.min.css" rel="stylesheet">
+      <link href="css/fontawesome.min.css" rel="stylesheet">
+
+    <!-- SPECIFIC CSS -->
+    <link href="layerslider/css/layerslider.css" rel="stylesheet">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+
+
+    </head>
+    <body>
+        <div id="mm-0" class="mm-page mm-slideout">
+            <div class=" top-header">
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="offset-md-2 col-md-6">
+                            <div class="follow_us mt-0 pt-2 pull-left">
+                                <div class="row no-gutters">
+                                    <div class="col"><a href="https://facebook.com/"><i clsass="rs rs-facebook"></i></a></div>
+                                    <div class="col"><a href="https://www.instagram.com/"><i class="rs rs-instagram"></i></a></div>
+                                     <a  href="/newsletter">newsletter</a>
+                                    <div class="col"><a href="https://www.whatsapp.com/?lang=fr"><i class="rs rs-whatsup"></i></a></div>
+                                    <div class="col"><a href="https://www.youtube.com/"><i class="rs rs-youtube"></i></a></div>
+                                    <div class="col">|</div>
+                                     <a  href="/register">Register</a>
+
+                                    <div class="col-md-3"><i class="contact contact-phone"></i> <small>(+216)</small> 22 222 222</div>
+                                    <div class="col">|</div>
+                                    <a  href="/login">Connection</a>
+                                    <div class="col-md-3"><i class="contact contact-mail"></i> <small>contact@lorem.com</small></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="follow_us mt-0 pt-2 pull-right">
+                                <ul id="top_menu">
+                                    <li></li>
+                                    <li><a href=""><i class="connexion connexion-user"></i> <small>S'identifier</small></a></li>
+                                    <li><a style="margin-top: 6px;">|</a></li>
+                                    <li><a href=""><i class="connexion connexion-inscrit"></i> <small>S'inscrire</small> </a></li>
+                                    <li><a style="margin-top: 6px;">|</a></li>
+                                    <li><small>Français</small> <i class="langue langue-fr"></i></li>
+                                    <li><a href=""><i class="panier panier-vide"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <header class="header">
+                <div id="preloader">
+                    <div data-loader="circle-side"></div>
+                </div>
+                <div class="container">
+                    <!-- /Preload -->
+                    <div id="logo">
+                        <a href="index.html">
+                            <img src="img/logo.png" data-retina="true" alt="" class="logo_normal">
+                        </a>
+                    </div>
+
+                    <!-- /top_menu -->
+                    <a href="#menu" class="btn_mobile">
+                        <div class="hamburger hamburger--spin" id="hamburger">
+                            <div class="hamburger-box">
+                                <div class="hamburger-inner"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <nav id="menu" class="main-menu">
+                        <ul>
+                            <li><span><a href="homepage" class="text-center"><i class="menu-icons menu-home"></i><br> Accueil</a></span>
+
+                            </li>
+                            <li><span><a href="#0" class="text-center"><i class="menu-icons menu-hotel"></i><br> Hôtels</a></span>
+
+                            </li>
+                            <li><span><a href="voyages" class="text-center"><i class="menu-icons menu-voyage"></i><br>Voyages</a></span>
+
+                            </li>
+                            <li><span><a href="croisiere" class="text-center"><i class="menu-icons menu-cruise"></i><br> Croisières</a></span>
+
+                            </li>
+                            <li><span><a href="circuits" class="text-center"><i class="menu-icons menu-circuit"></i><br>Circuits</a></span></li>
+
+                            <li><span><a href="billeterie" class="text-center"><i class="menu-icons menu-billetterie"></i><br>Billetterie</a></span>
+
+                            </li>
+                            <li><span><a href="contact" class="text-center"><i class="menu-icons menu-contact"></i><br>Contact</a></span></li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+            </header>
+            <!-- /header -->
+           
+            
+            <main class="main">
+            {% block body %}{% endblock %}
+            </main>
+
+
+
+            <!-- /main -->
+
+            <footer>
+                <div class="container margin_60_35 ">
+                    <div class="row ">
+                        <div class="col-lg-4 col-md-12 p-r-5 ">
+                            <p><img src="img/logo.png " class="logo_normal " data-retina="true " alt=" "></p>
+                        </div>
+                        <div class="col-lg-4 col-md-12 p-r-5 text-center" style="border-left: 2px solid;">
+                            <h1><i class="footer-icons footer-phone"></i> <small>+216</small> 222 222</h1>
+                            <p class="mb-0" style="    font-size: 1.3rem;">Lun au Sam: 9-17h30</p>
+                        </div>
+                        <div class="col-lg-4 col-md-12 p-r-5 " style="border-left: 2px solid;padding: 25px;
+                        font-size: 1.5rem;
+                    ">
+                            <i class="ti-email"></i> email@lorem.com
+                        </div>
+                        <div style="
+                        border-bottom: 1px solid #dedede;
+                        width: 100%;
+                        margin-top: 20px;
+                    "></div>
+                        <div class="col-lg-3 col-md-12 p-r-5 ">
+                            <h5>Hôtels</h5>
+                            <ul class="links ">
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Hôtels Djerba</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Hôtels Hammamet</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Hôtels Sud</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Hôtels Tabarka</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Hôtels Sousse</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Hôtels Tunis</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Hôtels Monastir</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Hôtels Mahdia</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 ml-lg-auto ">
+                            <h5>Vacances</h5>
+                            <ul class="links ">
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Voyages Sans Visa</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Séjours Aux USA</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Séjour Turquie</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Luxe et Prestige</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Coup de coeur</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href=" ">Séjours Shopping</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 ml-lg-auto ">
+                            <h5>Informations Utiles</h5>
+                            <ul class="links ">
+                                <li><i class="footer-icons footer-saphix"></i><a href="">Qui sommes nous ?</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href="">Sécurité et confidentialité</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href="">Conditions de vente</a></li>
+                                <li><i class="footer-icons footer-saphix"></i><a href="">Plan du site</a></li>
+                            </ul>
+
+                        </div>
+                        <div class="col-lg-3 col-md-6 ">
+                            <h5>Contact</h5>
+                            <ul class="contacts ">
+                                <li><a href=" "><i class="ti-map-alt"></i> +(216) 22 222 222</a></li>
+                                <li><a href=" "><i class="ti-mobile"></i> +(216) 22 222 222</a></li>
+                                </a>
+                                </li>
+                            </ul>
+                            <div class="follow_us ">
+                                <ul>
+                                    <li></li>
+                                    <li><a href="#0 "><i class="ti-facebook "></i></a></li>
+                                    <li><a href="#0 "><i class="ti-twitter-alt "></i></a></li>
+                                    <li><a href="#0 "><i class="ti-instagram "></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/row-->
+                    <hr>
+                    <div class="row ">
+                        <div class="col-lg-6 ">
+
+                        </div>
+                        <div class="col-lg-6 ">
+                            <ul id="additional_links">
+                                <li><a href="#0 ">conditions de vente</a></li>
+                                <li><a href="#0 ">Qui somme nous</a></li>
+                                <li><span>© 2022 </span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--/footer-->
+        </div>
+
+         {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+
+
+
+         <!-- Back to top button -->
+
+        <!-- COMMON SCRIPTS -->
+        <script src="js/jquery-2.2.4.min.js "></script>
+        <script src="js/common_scripts.js "></script>
+        <script src="js/main.js "></script>
+        <div id="mm-blocker" class="mm-slideout" ></div>
+        <script src="assets/validate.js "></script>
+
+        <!-- SPECIFIC SCRIPTS -->
+        <script src="layerslider/js/greensock.js "></script>
+        <script src="layerslider/js/layerslider.transitions.js "></script>
+        <script src="layerslider/js/layerslider.kreaturamedia.jquery.js "></script>
+        <div class="modal fade login" id="register" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content relative">
+                            <div class="modal-header">
+                                <h4 class="modal-title">S'inscrire</h4>
+                                <span class="c-pointer" data-dismiss="modal" aria-label="Close">
+                                    <i class="input-icon field-icon fa">
+                                        <img src="/public/front/images/ico_close.svg" alt="close">
+                                    </i>
+                                </span>
+                            </div>
+                            <div class="modal-body">
+                                <form action="&#x2F;client&#x2F;addClient" method="POST" name="clients" id="Inscriptionweb" enctype="multipart&#x2F;form-data" class="form"><div class="row">
+
+                                <div class="form-group">
+                                        <select name="civilite" id="civilite" class="&#x20;form-control"><option value="0">Mr</option>
+                                <option value="1">Mme</option>
+                                <option value="2">Mlle</option></select></div>
+                                <div class="form-group">
+                                    
+                                        <input type="text" name="nom_client" id="nom_client" placeholder="Nom&#x20;Pr&#xE9;nom" class="&#x20;form-control" value="">        <i class="input-icon field-icon fa fa-user"></i>
+                                        <span style="margin-top: 5px;color:red" class="help-block "></span>
+                                </div>
+                                    <div class="form-group">
+                                        <input type="text" name="telephone" id="telephone" placeholder="T&#xE9;l&#xE9;phone" class="&#x20;form-control" value="">        <i class="input-icon field-icon fa fa-phone"></i>
+                                        <span style="margin-top: 5px;color:red" class="help-block "></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="email" id="email" placeholder="E-mail" class="&#x20;form-control" value="">        <i class="input-icon field-icon fa fa-envelope"></i>
+                                        <span style="margin-top: 5px;color:red" class="help-block "></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" id="password" placeholder="Mot&#x20;de&#x20;passe" class="&#x20;form-control" value="">        <i class="input-icon field-icon fa fa-lock"></i>
+                                        <span style="margin-top: 5px; color:red" class="help-block "></span>
+                                    </div>
+                                    <button type="submit" class="btn active btn-info btn-circle form-submit">Inscription Membre</button>
+
+
+                                </div>
+
+                                </form>
+        <script>
+            'use strict';
+            $('#layerslider').layerSlider({
+                autoStart: true,
+                navButtons: false,
+                navStartStop: false,
+                showCircleTimer: false,
+                responsive: true,
+                responsiveUnder: 1280,
+                layersContainer: 1200,
+                skinsPath: 'layerslider/skins/'
+                    // Please make sure that you didn't forget to add a comma to the line endings
+                    // except the last line!
+            });
+        </script>
+    </body>
+</html>
