@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Circuits Controller!{% endblock %}
+  
+
+{% block body %}
+         <div class="site-breadcrumb" style="background:url(/img/bg/breadcrumb.jpg)">
+                <div class="container">
+                    <h2 class="breadcrumb-title">Résultat Trouvés</h2>
+                    <ul class="breadcrumb-menu">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li class="active">Résultats</li>
+                        <li class="active">circuits</li>
+                    </ul>
+                </div>
+            </div>
+
+
+              
+
+            <div class="tour-area pt-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                                <div class="destination-sidebar search-form-wrapper">
+                                       
+                                        <div class="widget">
+                                            <h4  class="widget-title">Chercher Circuits</h4>
+                                            <div class="row align-items-end">
+                                                {{ form_start(formulaire) }}
+
+                                                    <div class="col-12 search-input">
+                                                        <div class="form-group">
+                                                            {{ form_label(formulaire.Destination, 'Destination') }}
+                                                        
+                                                                <div class="form-control" placeholder="Istanbul, ...">
+                                                                {{form_widget(formulaire.Destination)}}
+                                                                </div>
+                                                                <div>
+                                                                <i class="far fa-map-marker-alt"></i>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12 search-input">
+                                                        <div class="form-group">
+                                                            {{ form_label(formulaire.Check_In, 'Check_In') }}
+                                                        
+                                                            <div class="form-control" placeholder="MM / DD / YY">
+                                                            {{form_widget(formulaire.Check_In)}}
+                                                            </div>
+                                                                <div>
+                                                                <i class="far fa-calendar-alt"></i>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-12 search-input" >
+                                                        <div class="form-group">
+                                                        {{ form_label(formulaire.Check_Out, 'Check_Out') }}
+                                                        
+                                                            <div class="form-control" placeholder="MM / DD / YY">
+                                                            {{form_widget(formulaire.Check_Out)}}
+                                                            </div>
+                                                                <div>
+                                                                <i class="far fa-calendar-alt"></i>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                
+                                                    </br>
+                                                    <button type="submit" class="search-btn"> <i class="far fa-search"></i>Trouver Destination</button>
+                                
+                                                    
+                                                    </br> 
+
+                                                {{ form_end(formulaire) }}
+                                            </div>
+                                        
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-lg-8">
+                          
+                            <div class="row align-items-center">
+                            
+
+                                <div class="col-md-12">
+
+                                <div class="alert" style="text-align:center"><img src="/img/no-searchpng.png"><br>
+
+                                    <strong> 
+
+                                        Aucun résultat Trouvé.</strong><br>
+
+
+                                </div>
+
+                                </div> 
+                                </div>
+
+                            <div class="pagination-area">
+                                <div aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-end">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true"><i class="far fa-arrow-left"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true"><i class="far fa-arrow-right"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+{% endblock %}
+

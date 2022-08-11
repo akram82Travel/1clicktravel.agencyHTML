@@ -1,0 +1,39 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+dashboard:
+    path: /admin
+    controller: App\Controller\DashboardController::index
+contact:
+    path: /contact
+    controller: App\Controller\ContactController::index
+profile:
+    path: /profile
+    controller: App\Controller\ProfileController::index    
+circuits:
+    path: /circuits
+    controller: App\Controller\CircuitsController::index
+billeterie:
+    path: /billeterie
+    controller: App\Controller\BilleterieController::index
+croisiere:
+    path: /croisiere
+    controller: App\Controller\CroisiereController::index
+newsletter:
+    path: /newsletter
+    controller: App\Controller\NewsletterController::index
+registration:
+    path: /registration
+    controller: App\Controller\RegistrationController::index 
+voyages:
+    path: /voyages
+    controller: App\Controller\VoyagesController::index       
+login:
+    path: /login
+    controller: App\Controller\SecurityController::index 
+homepage:
+    path: /homepage
+    controller: App\Controller\HomepageController::index
+index:
+    path: /
+    controller: App\Controller\HomepageController::index          

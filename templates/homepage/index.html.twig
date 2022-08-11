@@ -1,0 +1,535 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomepageController!{% endblock %}
+
+{% block body %}
+ <!-- Slider -->
+            <div id="full-slider-wrapper">
+                <div id="layerslider" style="width:100%;height:750px;">
+                    <!-- first slide -->
+                    <div class="ls-slide" data-ls="slidedelay: 5000; transition2d:85;">
+                        <img src="img/home_slider/slide_1.jpg" class="ls-bg" alt="Slide background">
+                        <!--<h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;">Book <strong>Unique</strong> Experiences</h3>
+                        <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+                            Tours | Hotels | Restaurants
+                        </p>
+                        <a class="ls-l btn_1 rounded" style="top:65%; left:50%;white-space: nowrap;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='hotels-grid-isotope.html'>Read more</a>-->
+                    </div>
+                    <!-- second slide -->
+                    <div class="ls-slide" data-ls="slidedelay:5000; transition2d:103;">
+                        <img src="img/home_slider/slide_2.jpg" class="ls-bg" alt="Slide background">
+                        <!--
+                        <h3 class="ls-l slide_typo" style="top: 47%; left: 50%;" data-ls="offsetxin:0;durationin:2000;delayin:1000;easingin:easeOutElastic;rotatexin:90;transformoriginin:50% bottom 0;offsetxout:0;rotatexout:90;transformoriginout:50% bottom 0;"><strong>Enjoy</strong> Unforgatable Holidays</h3>
+                        <p class="ls-l slide_typo_2" style="top:55%; left:50%;" data-ls="durationin:2000;delayin:1000;easingin:easeOutElastic;">
+                            Tours | Hotels | Restaurants
+                        </p>
+                        <a class="ls-l btn_1 rounded" style="top:65%; left:50%;white-space: nowrap;" data-ls="durationin:2000;delayin:1400;easingin:easeOutElastic;" href='tours-grid-isotope.html'>Read more</a>-->
+                    </div>
+                </div>
+            </div>
+            <!-- End layerslider -->
+
+            <section>
+                <div class="container">
+                    <div class="search-container">
+                        <div class="top-search">
+                            <ul>
+                                <li style="font-weight: 400">Vous rechercher:</li>
+                                <li><a>Hôtels en Tunisie</a></li>
+                                <li><a>Hôtels à l'étarnger</a></li>
+                                <li><a>Voyages organisés</a></li>
+                                <li><a>Vols</a></li>
+                                <li><a>Voiture</a></li>
+                            </ul>
+                        </div>
+                        <div class="search">
+                            <form>
+                                <div class="row no-gutters">
+                                    <div class="col icon-search-style ptsearch"><i class="ti-map-alt"></i></div>
+                                    <div class="col border-right ptsearch">
+                                        <label>Où allez-vous ?</label>
+                                        <input type="text" placeholder="Ville ou nom d'hôtel">
+                                    </div>
+                                    <div class="col icon-search-style ptsearch"><i class="icofont-calendar"></i>
+                                    </div>
+                                    <div class="col border-right ptsearch"><label>Votre Arrivée</label>
+                                        <input type="text" placeholder="26/04/2022">
+                                    </div>
+                                    <div class="col icon-search-style ptsearch"><i class="icofont-calendar"></i></div>
+                                    <div class="col border-right ptsearch"><label>Votre Départ</label>
+                                        <input type="text" placeholder="27/04/2022">
+                                    </div>
+                                    <div class="col-md-1 border-right ptsearch"><label>Nuités</label>
+                                        <input type="text" placeholder="1 nuit" class="w-100">
+                                    </div>
+                                    <div class="col ptsearch"><label>Chambres et occupation</label>
+                                        <input type="text" placeholder="1 chambre, 2 Adultes">
+                                    </div>
+                                    <div class="col ptsearch">
+
+                                    </div>
+                                    <div class="col"><button type="submit" class="button-search"><i class="ti-search"></i></button></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </section>
+            <div style="    background: #eee;
+            width: 100%;
+            height: 1240px;
+            position: absolute;
+            z-index: -1;
+            top: 500px;
+        "></div>
+            <div class="container container-custom margin_40_0">
+                <div class="main_title_2">
+                    <i class="title t1"></i>
+                    <h2>Nos meilleurs Hôtels en Tunisie</h2>
+                </div>
+                <ul class="nav nav-pills nav-fill mt-2 mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Sousse</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mahdia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Monastir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hammamet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tunis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tabarka</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" nav-link" href="# ">Djerba</a>
+                    </li>
+                </ul>
+                <div class="row ">
+                    <div class="col-md-4 ">
+                        <div class="card sone ">
+                            <a class="box_news one " href="#0 ">
+                                <figure><img src="img/sone350x220.png " alt=" "></figure>
+                            </a>
+                            <div class="card-body ">
+                                <h4>La Cigale Tabarka</h4>
+                                <p><i class="ti-map-alt "></i> Tabarka | <i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i></p>
+                                <div class="row no-gutters ">
+                                    <div class="col-md-8 ">Dès <span class="price ">170</span> <sup>TND</sup> ALL INCLUSIF</div>
+                                    <div class="col-md-4 pt-2 ">
+                                        <div class="read_more "><a href=" "><span>VOIR L'OFFRE</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="card sone ">
+                            <a class="box_news one " href="#0 ">
+                                <figure><img src="img/sone2350x220.png " alt=" "></figure>
+                            </a>
+                            <div class="card-body ">
+                                <h4>The Russelior Hotel & Spa </h4>
+                                <p><i class="ti-map-alt "></i> Tabarka | <i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i></p>
+                                <div class="row no-gutters ">
+                                    <div class="col-md-8 ">Dès <span class="price ">170</span> <sup>TND</sup> ALL INCLUSIF</div>
+                                    <div class="col-md-4 pt-2 ">
+                                        <div class="read_more "><a href=" "><span>VOIR L'OFFRE</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="card sone ">
+                            <a class="box_news one " href="#0 ">
+                                <figure><img src="img/sone3350x220.png " alt=" "></figure>
+                            </a>
+                            <div class="card-body ">
+                                <h4>Anantara Tozeur</h4>
+                                <p><i class="ti-map-alt "></i> Tabarka | <i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i></p>
+                                <div class="row no-gutters ">
+                                    <div class="col-md-8 ">Dès <span class="price ">170</span> <sup>TND</sup> ALL INCLUSIF</div>
+                                    <div class="col-md-4 pt-2 ">
+                                        <div class="read_more "><a href=" "><span>VOIR L'OFFRE</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="btn_home_align "><a href="# " class="btn_1 rounded ">VOIR TOUTES NOS OFFRES</a></p>
+
+            </div>
+            <div class="container container-custom margin_40_0 ">
+                <div class="main_title_2 ">
+                    <i class="title t2 "></i>
+                    <h2> Dernières minutes</h2>
+                </div>
+                <div id="reccomended" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="box_grid">
+                            <figure>
+
+                                <a href="tour-detail.html"><img src="img/block1-1.png" class="img-fluid" alt="" width="800" height="533">
+                                    <div class="read_more"><span>VOIR L'OFFRE</span></div>
+                                </a>
+
+                            </figure>
+
+                        </div>
+                    </div>
+                    <!-- /item -->
+                    <div class="item">
+                        <div class="box_grid">
+                            <figure>
+
+                                <a href="#"><img src="img/block1-2.png" class="img-fluid" alt="" width="800" height="533">
+                                    <div class="read_more"><span>VOIR L'OFFRE</span></div>
+                                </a>
+
+                            </figure>
+
+                        </div>
+                    </div>
+                    <!-- /item -->
+                    <div class="item">
+                        <div class="box_grid">
+                            <figure>
+
+                                <a href="#"><img src="img/block1-3.png" class="img-fluid" alt="" width="800" height="533">
+                                    <div class="read_more"><span>VOIR L'OFFRE</span></div>
+                                </a>
+
+                            </figure>
+
+                        </div>
+                    </div>
+                    <!-- /item -->
+                    <div class="item">
+                        <div class="box_grid">
+                            <figure>
+
+                                <a href="tour-detail.html"><img src="img/block1-1.png" class="img-fluid" alt="" width="800" height="533">
+                                    <div class="read_more"><span>VOIR L'OFFRE</span></div>
+                                </a>
+
+                            </figure>
+
+                        </div>
+                    </div>
+                    <!-- /item -->
+                    <div class="item">
+                        <div class="box_grid">
+                            <figure>
+
+                                <a href="#"><img src="img/block1-2.png" class="img-fluid" alt="" width="800" height="533">
+                                    <div class="read_more"><span>VOIR L'OFFRE</span></div>
+                                </a>
+
+                            </figure>
+
+                        </div>
+                    </div>
+                    <!-- /item -->
+                    <div class="item">
+                        <div class="box_grid">
+                            <figure>
+
+                                <a href="#"><img src="img/block1-3.png" class="img-fluid" alt="" width="800" height="533">
+                                    <div class="read_more"><span>VOIR L'OFFRE</span></div>
+                                </a>
+
+                            </figure>
+
+                        </div>
+                    </div>
+                    <!-- /item -->
+
+                </div>
+                
+                <!-- /carousel -->
+                <p class="btn_home_align "><a href="# " class="btn_1 rounded ">VOIR TOUTES NOS OFFRES</a></p>
+
+            </div>
+            <!-- /container -->
+
+            <div class="container container-custom margin_40_0 ">
+                <div class="main_title_2 ">
+                    <i class="title t3 "></i>
+                    <h2>Top Destinations</h2>
+                </div>
+                <ul class="nav nav-pills nav-fill mt-2 mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Ou partir ce printemps ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tunisie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Afrique & Moyen Orient</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Asie</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Europe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Amérique</a>
+                    </li>
+                </ul>
+                <div class="row ">
+                    <div class="col-md-4 ">
+                        <div class="card stwo ">
+                            <a class="box_news two " href="#0 ">
+                                <figure><img src="img/stwo393x331.png " alt=" "></figure>
+                            </a>
+                            <div class="card-body ">
+                                <h4>Maroc</h4>
+                                <p><i class="ti-time "></i> 7 nuits/6 jours</p>
+                                <div class="row no-gutters ">
+                                    <div class="col-md-8 ">Dès <span class="price ">870</span> <sup>TND</sup> / Pers</div>
+                                    <div class="col-md-4 pt-2 ">
+                                        <div class="read_more "><a href=" "><span>VOIR L'OFFRE</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="card stwo ">
+                            <a class="box_news two " href="#0 ">
+                                <figure><img src="img/stwo2393x331.png " alt=" "></figure>
+                            </a>
+                            <div class="card-body ">
+                                <h4>Italie</h4>
+                                <p><i class="ti-time "></i> 7 nuits/6 jours</p>
+                                <div class="row no-gutters ">
+                                    <div class="col-md-8 ">Dès <span class="price ">990</span> <sup>TND</sup> / Pers</div>
+                                    <div class="col-md-4 pt-2 ">
+                                        <div class="read_more "><a href=" "><span>VOIR L'OFFRE</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="card stwo ">
+                            <a class="box_news two " href="#0 ">
+                                <figure><img src="img/stwo3393x331.png " alt=" "></figure>
+                            </a>
+                            <div class="card-body ">
+                                <h4>Thailande</h4>
+                                <p><i class="ti-time "></i> 7 nuits/6 jours</p>
+                                <div class="row no-gutters ">
+                                    <div class="col-md-8 ">Dès <span class="price ">1870</span> <sup>TND</sup> / Pers</div>
+                                    <div class="col-md-4 pt-2 ">
+                                        <div class="read_more "><a href=" "><span>VOIR L'OFFRE</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="btn_home_align "><a href="# " class="btn_1 rounded ">VOIR TOUTES NOS OFFRES</a></p>
+
+            </div>
+
+            <div class="container container-custom margin_40_0 ">
+                <div class="main_title_2 ">
+                    <i class="title t4 "></i>
+                    <h2>Hôtels enfant gratuit</h2>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4 ">
+                        <div class="card sthree ">
+                            <div class="card-body ">
+                                <h4>Thalassa Sousse</h4>
+                                <p><i class="ti-map-alt "></i> Sousse | <i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i></p>
+
+                            </div>
+                            <a class="box_news three " href="#0 ">
+                                <figure><img src="img/sthree340x200.png " alt=" "></figure>
+                            </a>
+                            <div class="card-body pt-0 ">
+                                <div class="row no-gutters ">
+                                    <div class="col-md-8 ">Dès <span class="price ">170</span> <sup>TND</sup> ALL INCLUSIF</div>
+                                    <div class="col-md-4 pt-2 ">
+                                        <div class="read_more "><a href=" "><span>VOIR L'OFFRE</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="card sthree ">
+                            <div class="card-body ">
+                                <h4>Skanes Family</h4>
+                                <p><i class="ti-map-alt "></i> Monastir | <i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i></p>
+
+                            </div>
+                            <a class="box_news three " href="#0 ">
+                                <figure><img src="img/sthree2340x200.png " alt=" "></figure>
+                            </a>
+                            <div class="card-body pt-0 ">
+                                <div class="row no-gutters ">
+                                    <div class="col-md-8 ">Dès <span class="price ">170</span> <sup>TND</sup> ALL INCLUSIF</div>
+                                    <div class="col-md-4 pt-2 ">
+                                        <div class="read_more "><a href=" "><span>VOIR L'OFFRE</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="card sthree ">
+                            <div class="card-body ">
+                                <h4>La Palmeraie</h4>
+                                <p><i class="ti-map-alt "></i> Tozeur | <i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i><i class="ti-star "></i></p>
+
+                            </div>
+                            <a class="box_news three " href="#0 ">
+                                <figure><img src="img/sthree3340x200.png " alt=" "></figure>
+                            </a>
+                            <div class="card-body pt-0 ">
+                                <div class="row no-gutters ">
+                                    <div class="col-md-8 ">Dès <span class="price ">170</span> <sup>TND</sup> ALL INCLUSIF</div>
+                                    <div class="col-md-4 pt-2 ">
+                                        <div class="read_more "><a href=" "><span>VOIR L'OFFRE</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="btn_home_align "><a href="# " class="btn_1 rounded ">VOIR TOUTES NOS OFFRES</a></p>
+
+            </div>
+            <div class="call_section " id="newsletterpafrallax">
+                <div class="container clearfix text-center ">
+                    <h3>Recevez notre newsletter</h3>
+                    <p>Restez informés pour recevoir en avant première les promos
+                        <br> et les bons plans de voyages</p>
+                    <form>
+                        {{ form_start(formulaire) }}
+
+                    
+                        <div class="row" style=" margin-left: 300px;">
+                             
+
+                            <div class="col-md-5  " placeholder="Votre adress e-mail... ">
+                             {{form_widget(formulaire.email)}}
+                            
+                            
+                        </div>
+                         {{ form_end(formulaire) }}
+                    </form>
+                </div>
+            </div>
+
+
+
+
+            <!--
+            <div id="login_modal"><script async="" defer="" crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&amp;version=v6.0&amp;appId=&amp;autoLogAppEvents=1"></script>
+            <!--script src="https://apis.google.com/js/platform.js" async defer></script-->
+            <!--
+                <div class="modal fade login" id="login" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 460px;">
+                        <div class="modal-content relative">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Se Connecter</h4>
+                                <span class="c-pointer" data-dismiss="modal" aria-label="Close">
+
+                                    <i class="input-icon field-icon fa">
+                                        <img src="/public/front/images/ico_close.svg" alt="close">
+                                    </i>
+                                </span>
+                            </div>
+                            <div class="modal-body relative">
+                                <form method="post" action="/user/authentification">
+                                    <input type="hidden" name="userrole" id="userrole" value="client">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="identity" autocomplete="off" placeholder="Taper votre adresse E-mail" required="required">
+                                        <i class="input-icon fa fa-envelope"></i>
+                                        <span class="invalid-feedback error error-email"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name="credential" autocomplete="off" placeholder="Entrez votre mot de passe" required="required">
+                                        <i class="input-icon fa fa-lock"></i>
+                                        <span class="invalid-feedback error error-password"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="d-flex justify-content-between">
+                                            <a href="/client/changerMotDePasse">Mot de passe oublié ?</a>
+                                        </div>
+                                    </div>
+                                    <div class="error message-error invalid-feedback"></div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary form-submit" id="send" type="submit">
+                                            Se Connecter
+                                        </button>
+                                    </div>
+                                
+                                    <div class="c-grey font-medium f14 text-center"> Vous n'avez pas de compte? <a href="" data-target="#register" data-toggle="modal">S'inscrire</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade login show" id="register" tabindex="-1" role="dialog" style="display: block; padding-right: 17px;" aria-modal="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content relative">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">S'inscrire</h4>
+                                                <span class="c-pointer" data-dismiss="modal" aria-label="Close">
+                                                    <i class="input-icon field-icon fa">
+                                                        <img src="/public/front/images/ico_close.svg" alt="close">
+                                                    </i>
+                                                </span>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="/client/addClient" method="POST" name="clients" id="Inscriptionweb" enctype="multipart/form-data" class="form"><div class="row">
+
+                                                    <div class="form-group">
+                                                        <select name="civilite" id="civilite" class=" form-control">
+                                                        <option value="0">Mr</option>
+                                                        <option value="1">Mme</option>
+                                                        <option value="2">Mlle</option></select></div>
+                                                        <div class="form-group">
+                                                                <input type="text" name="nom_client" id="nom_client" placeholder="Nom Prénom" class=" form-control" value="">        <i class="input-icon field-icon fa fa-user"></i>
+                                                                <span style="margin-top: 5px;color:red" class="help-block "></span>
+                                                        </div>
+                                                            <div class="form-group">
+                                                                <input type="text" name="telephone" id="telephone" placeholder="Téléphone" class=" form-control" value="">        <i class="input-icon field-icon fa fa-phone"></i>
+                                                                <span style="margin-top: 5px;color:red" class="help-block "></span>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" name="email" id="email" placeholder="E-mail" class=" form-control" value="">        <i class="input-icon field-icon fa fa-envelope"></i>
+                                                                <span style="margin-top: 5px;color:red" class="help-block "></span>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="password" name="password" id="password" placeholder="Mot de passe" class=" form-control" value="">        <i class="input-icon field-icon fa fa-lock"></i>
+                                                                <span style="margin-top: 5px; color:red" class="help-block "></span>
+                                                            </div>
+                                                            <button type="submit" class="btn active btn-info btn-circle form-submit">Inscription Membre</button>
+                                                    </div>
+
+                                                </form>
+                                                <script>
+                                                    $("#Inscriptionweb").validation({inputs: ['nom_client','telephone','email','password','newsletter']});
+                                                </script>                          
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+            </div>-->               
+{% endblock %}
+

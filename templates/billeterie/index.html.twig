@@ -1,0 +1,324 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BilleterieController!{% endblock %}
+
+{% block body %}
+
+
+
+<div class="container" id="zone-simple">
+          <div class="row" style="visibility: hidden">
+                  <select name="type_vol" id="type_vol" class="form-control borderright valuestyle"><option value="0">Aller simple</option>
+          <option value="1">Aller / Retour</option>
+          <option value="2">Multidestination</option></select>        </div>
+
+
+
+
+
+                <div class="cform" role="form">
+                 <div class="container" id="zone-simple">
+
+<div class="container" id="zone-simple">
+
+        <form action="/demandes/addAjax" method="POST" name="clients" enctype="multipart/form-data" id="FormVol" class="cform" role="form">        <input type="hidden" name="id_type_demandes" id="id_type_demandes" value="1">
+        <div class="row" style="visibility: hidden">
+        <select name="type_vol" id="type_vol" class="form-control borderright valuestyle"><option value="0">Aller simple</option>
+<option value="1">Aller / Retour</option>
+<option value="2">Multidestination</option></select>        </div>
+
+
+        <div class="row ">
+            <div class="col-md-12" id="destination">
+<div>
+    <input type="hidden" id="index" name="index" value="1">
+    <div class="row">
+           <div class="col-md-12 ">
+                <h5>
+                    <span class="line"></span>
+                    <span class="text"><strong>Détails Vol </strong></span>
+                </h5>
+            </div>
+      
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="de">Départ</label>
+                <input type="text" id="ville_depart1" name="ville_depart1" class="form-control" required="required" pattern="[A-Za-z0-9]{1,20}">
+                <span class="help-block"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="a">Retour</label>
+                <input type="text" id="ville_arrivee1" name="ville_arrivee1" class="form-control" required="required" pattern="[A-Za-z0-9]{1,20}">
+                <span class="help-block " style="margin-top: 5px;"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="classe">Classe</label>
+                                <select id="classe1" name="classe1" class="form-control" required="">
+                                            <option value="Business">Business</option>   
+                                    </select>
+                <span class="help-block " style="margin-top: 5px;"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="compagnie">Compagnie</label>
+                <select id="compagnie1" name="compagnie1" class="form-control" required="">
+                                            <option value="Air Frances">Air Frances</option>   
+                                            <option value="Turkish air line">Turkish air line</option>   
+                                    </select>
+                <span class="help-block " style="margin-top: 5px;"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label class="control-label" for="date_depart">Date de départ</label>
+                <div class="input-group date" id="datetimepickerdatedepart1">
+                    <input type="text" id="date_depart1" name="date_depart1" class="form-control" required="required" value="19/07/2022" max="19/07/2022">
+                    <span class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </div>
+                <span class="help-block " style="margin-top: 5px;"></span>
+                <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="col-md-3" id="date_retour_container" style="display: none;">
+        <div class="form-group">
+            <label class="control-label" for="date_retour">Date Retour </label>
+            <div class="input-group date" id="datetimepickerdateretour1">
+                 <input type="text" id="date_retour1" name="date_retour1" class="form-control" required="required" value="19/07/2022" max="19/07/2022">
+                <span class="input-group-addon">
+                    <i class="fa fa-calendar fa-grean"></i>
+                </span>
+                <span class="help-block " style="margin-top: 5px;"></span>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    
+
+</div>
+</div>
+            <div class="col-md-12" id="ajout_vol" style="display: none; text-align: center;">
+                <a href="javascript:void(0);" class="lien_ajout btn " id="addVol">
+                    <span class="rose">+</span>Ajouter un vol</a>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-12 ">
+                <h5>
+                    <span class="line"></span>
+                    <span class="text"><strong>Voyageur(s)</strong></span>
+                </h5>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label">Nombre Adulte(s) 
+                        <small style="font-size: smaller !important;"></small> 
+                    </label> 
+                    <select name="nbAdulte" class="form-control" id="nbAdulte">
+                    <option value="1">1 ADULTE</option>
+                    <option value="2">2 ADULTES</option>
+                    <option value="3">3 ADULTES</option>
+                    <option value="4">4 ADULTES</option>
+                    <option value="5">5 ADULTES</option>
+                    <option value="6">6 ADULTES</option>
+                    <option value="7">7 ADULTES</option>
+                    <option value="8">8 ADULTES</option>
+                    <option value="9">9 ADULTES</option>
+<option value="10">10 ADULTES</option></select>                    <span class="help-block"></span>
+                    <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="nbEnfant">Nombre Enfant(s) </label>
+                    <select name="nbEnfant" class="form-control" id="nbEnfant"><option value="0">0 ENFANT</option>
+<option value="1">1 ENFANT</option>
+<option value="2">2 ENFANTS</option>
+<option value="3">3 ENFANTS</option>
+<option value="4">4 ENFANTS</option>
+<option value="5">5 ENFANTS</option></select>                    <span class="help-block"></span>
+                    <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="nbBebe">Nombre Bébé(s) </label>
+                    <select name="nbBebe" class="form-control" id="nbBebe"><option value="0">0 BEBE</option>
+<option value="1">1 BEBE</option>
+<option value="2">2 BEBES</option>
+<option value="3">3 BEBES</option>
+<option value="4">4 BEBES</option>
+<option value="5">5 BEBES</option></select>
+
+
+                    <span class="help-block"></span>
+                          <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="col-md-12" id="result" id="demande_benif_adl"><div class="card">
+    {% include "billeterie/formAdulte.html.twig" %}
+    {% include "billeterie/formAdulte.html.twig" %}
+    {% include "billeterie/formAdulte.html.twig" %}
+
+
+
+    </div>
+    </div>
+ 
+   
+
+
+    
+  
+</div>
+<div style="margin-bottom: 10px;"></div>
+</div>
+            <div class="col-md-12" id="demande_benif_enf"></div>
+            <div class="col-md-12" id="demande_benif_bb"></div>
+
+        </div>
+        <div class="row ">
+            <div class="col-md-12 ">
+                <h5>
+                    <span class="line"></span>
+                    <span class="text"><strong>Coordonnées</strong></span>
+                </h5>
+            </div>
+
+
+            <div class="col-md-1">
+                <div class="form-group">
+                    <label class="control-label" for="civilite">
+                        Civilité                        </label>
+                    <select name="civilite" class="form-control borderright valuestyle" id="civilite" required="required"><option value="0">Mr</option>
+<option value="2">Mlle</option>
+<option value="1">Mme</option></select>                    <span class="help-block"></span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="prenom_client">Prénom </label>
+                    <input type="text" name="prenom_client" id="prenom_client" class="form-control borderright valuestyle " value="">                    <span class="help-block "></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="nom_client">Nom </label>
+                    <input type="text" name="nom_client" id="nom_client" class="form-control borderright valuestyle" value="">                    <span class="help-block "></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label class="control-label" for="email">E-mail </label>
+                    <input type="text" name="email" id="email" class="form-control borderright valuestyle " value="">                    <span class="help-block "></span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <label class="control-label" for="telephone">Téléphone </label>
+                    <input type="text" name="telephone" id="telephone" class="form-control borderright valuestyle " value="00216">                    <span class="help-block "></span>
+                </div>
+            </div>
+            <div class="col-md-12 ">
+                <h5>
+                    <span class="line"></span>
+                    <span class="text"><strong>Observation(s)</strong></span>
+                </h5>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <textarea name="remarque" id="remarque" class="form-control borderright valuestyle"></textarea>                    <span class="help-block "></span>
+                </div>
+            </div>   
+
+
+            <div class="col-md-12">
+                 Champ obligatoire            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="clearfix" style="float:right !important;">
+                <button class="btn submit-button btn-save" type="submit">Enregistrer</button>
+                <div class="margin_bottom5"></div>
+            </div>
+        </div>
+        </form>
+
+    </div>
+
+    </div>
+
+
+</br>
+
+</br>
+<script type="text/javascript" src="{{asset('js/jquery.js')}}"></script>
+<script type="text/javascript">
+console.log('hahaha')
+$(document).ready(function(){
+    $("#nbAdulte").change(function() {
+        $.ajax ({
+            url: window.location.protocol +'//'+ window.location.host +'/adulte/'+$("#nbAdulte").val(),
+            success: function(response) {
+                $('#result').html(response.data);
+            }
+            
+
+        });
+    });
+    $("#nbEnfant").change(function() {
+        $.ajax ({
+            url: window.location.protocol +'//'+ window.location.host +'/enfant/'+$("#nbEnfant").val(),
+            success: function(response) {
+                $('#result').html(response.data);
+            }
+            
+
+        });
+    });
+    $("#nbBebe").change(function() {
+        $.ajax ({
+            url: window.location.protocol +'//'+ window.location.host +'/bebe/'+$("#nbBebe").val(),
+            success: function(response) {
+                $('#result').html(response.data);
+            }
+            
+
+        });
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

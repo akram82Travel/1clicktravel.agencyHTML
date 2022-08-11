@@ -1,0 +1,51 @@
+{% if nbAdult is defined %}
+{{nbAdult}}
+{% for i in 0 .. nbAdult %}
+        <div class="card-body">
+          <div class="row">
+         <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label" for="nom">Nom Adulte Adulte </label>
+                        <input type="text" id="nom-Adulte-1" name="nom-Adulte-1" class="form-control" required="required" pattern="[A-Za-z0-9]{1,20}">
+
+            <span class="help-block " style="margin-top: 5px;"></span>
+            <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+        </div>
+    </div> 
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label" for="prenom">Prénom Adulte Adulte </label>
+            
+            <input type="text" id="prenom-Adulte-1" name="prenom-Adulte-1" class="form-control" required="required">
+
+            <span class="help-block " style="margin-top: 5px;"></span>
+            <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+        </div>
+    </div> 
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label" for="date_nais">Date de naissance Adulte  </label>
+            <div class="input-group date" id="datetimepickernais-Adulte-1">
+                
+                <input type="text" id="date_nais-Adulte-1" name="date_nais-Adulte-1" class="form-control" required="required">
+                <span class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </span>
+            </div>
+            <span class="help-block " style="margin-top: 5px;"></span>
+            <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label class="control-label" for="passport">Passeport N° Adulte </label>
+            
+            <input type="text" id="passport-Adulte-1" name="passport-Adulte-1" class="form-control" required="required" pattern="[a-zA-Z0-9]{7}">
+            <span class="help-block " style="margin-top: 5px;"></span>
+            <span class="glyphicon form-control-feedback" style="display: none;" aria-hidden="true"></span>
+        </div>
+    </div>    
+    {% endfor %}
+{% else %}
+ahhahahahaha
+{% endif %}
